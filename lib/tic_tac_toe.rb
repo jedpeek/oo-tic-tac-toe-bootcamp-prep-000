@@ -40,4 +40,12 @@ class TicTacToe
   array[index] = value
 end
 
+def position_taken?(index)
+  if @board[index] == "X" || @board[index] == "O"
+    return true
+  else
+    return false
+  end
+end
+
 end
