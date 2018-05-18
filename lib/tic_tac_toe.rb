@@ -65,11 +65,11 @@ end
     user_input = gets.strip
     index = input_to_index(user_input)
     if valid_move?(index)
-       player = current_player()
+       player = current_player
        move(index, player)
-       display_board()
+       display_board
      else
-       turn()
+       turn
      end
   end
 
@@ -85,7 +85,7 @@ end
   end
 
   def current_player
-    if turn_count() % 2 == 0
+    if turn_count % 2 == 0
       player = "X"
     else
       player = "O"
