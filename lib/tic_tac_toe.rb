@@ -93,4 +93,53 @@ def current_player()
 return player
 end
 
+def won?()
+  WIN_COMBINATIONS.each do |win_combo|
+    index_1 = win_combo[0]
+    index_2 = win_combo[1]
+    index_3 = win_combo[2]
+
+    pos_1 = @board[index_1]
+    pos_2 = @board[index_2]
+    pos_3 = @board[index_3]
+
+    if (pos_1 == "X" && pos_2 == "X" && pos_3 == "X") || (pos_1 == "O" && pos_2 == "O" && pos_3 == "O")
+      return win_combo
+    end
+
+  end
+  return false
+end
+
+def full?()
+  @board.each do |i|
+    if i == " "
+      return false
+    end
+  end
+    return true
+end
+
+def draw?()
+  if won?() != false
+    return false
+  end
+  return full?()
+end
+
+def over?()
+  if won?() != false
+    return true
+  end
+return draw?()
+end
+
+def winner()
+  win_combo = won?()
+  if won?()
+    return @board[win_combo[0]]
+  end
+return nil
+end
+
 end
