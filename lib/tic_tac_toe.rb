@@ -142,4 +142,15 @@ def winner
 return nil
 end
 
+def play()
+  until over? == true
+    turn
+  end
+  if won? != false
+    puts "Congratulations #{winner}!"
+  elsif draw? == true
+    puts "Cat's Game!"
+  end
+end
+
 end
