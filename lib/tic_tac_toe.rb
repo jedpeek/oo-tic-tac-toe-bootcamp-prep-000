@@ -48,4 +48,16 @@ def position_taken?(index)
   end
 end
 
+def valid_move?(index)
+  if (index >= 9 || index < 0 || index == !Fixnum)
+    puts "Not a valid move. Try again."
+    return false
+  elsif position_taken?(index)
+    puts "Position taken. Try again."
+    return false
+  else
+    return true
+  end
+end
+
 end
