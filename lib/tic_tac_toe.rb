@@ -143,6 +143,7 @@ end
   end
 
   def play
+    display_board
     until over? == true
       turn
     end
