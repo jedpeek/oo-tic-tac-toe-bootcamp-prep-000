@@ -60,7 +60,7 @@ def valid_move?(index)
   end
 end
 
-def turn()
+def turn
   puts "Please enter 1-9:"
   user_input = gets.strip
   index = input_to_index(user_input)
@@ -74,7 +74,7 @@ def turn()
 end
 
 
-def turn_count()
+def turn_count
   count = 0
   @board.each do |board|
     if board == "X" || board == "O"
@@ -84,7 +84,7 @@ def turn_count()
   return count
 end
 
-def current_player()
+def current_player
   if turn_count() % 2 == 0
     player = "X"
   else
@@ -93,7 +93,7 @@ def current_player()
 return player
 end
 
-def won?()
+def won?
   WIN_COMBINATIONS.each do |win_combo|
     index_1 = win_combo[0]
     index_2 = win_combo[1]
@@ -111,7 +111,7 @@ def won?()
   return false
 end
 
-def full?()
+def full?
   @board.each do |i|
     if i == " "
       return false
@@ -120,21 +120,21 @@ def full?()
     return true
 end
 
-def draw?()
+def draw?
   if won?() != false
     return false
   end
   return full?()
 end
 
-def over?()
+def over?
   if won?() != false
     return true
   end
 return draw?()
 end
 
-def winner()
+def winner
   win_combo = won?()
   if won?()
     return @board[win_combo[0]]
