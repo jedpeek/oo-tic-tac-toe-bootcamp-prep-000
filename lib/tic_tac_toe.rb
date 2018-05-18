@@ -121,28 +121,28 @@ end
   end
 
   def draw?
-    if won?() != false
+    if won? != false
       return false
     end
-    return full?()
+    return full?
   end
 
   def over?
-    if won?() != false
+    if won? != false
       return true
     end
-  return draw?()
+  return draw?
   end
 
   def winner
-    win_combo = won?()
-    if won?()
+    win_combo = won?
+    if won?
       return @board[win_combo[0]]
     end
   return nil
   end
 
-  def play()
+  def play
     until over? == true
       turn
     end
