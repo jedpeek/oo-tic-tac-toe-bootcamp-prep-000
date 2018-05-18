@@ -84,4 +84,13 @@ def turn_count()
   return count
 end
 
+def current_player()
+  if turn_count() % 2 == 0
+    player = "X"
+  else
+    player = "O"
+  end
+return player
+end
+
 end
